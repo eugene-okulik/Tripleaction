@@ -10,7 +10,9 @@ my_dict["list"].append("Vasy")
 my_dict["list"].pop(1)
 
 del my_dict["dict"]["one"]
-my_dict["dict"]['i am tuple'] = 1234567890
+my_dict ["dict"][('i am a tuple',)] = 123456
+
+
 
 my_dict["set"].add(6)
 my_dict["set"].remove(1)
