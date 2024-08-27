@@ -2,14 +2,10 @@ result1 = "результат операции: 42"
 result2 = "результат операции: 514"
 result3 = "результат работы программы: 9"
 
-b = result1.index("4")
-a = int(result1[b:])
+number1 = int(result1[result1.index(':') + 1:]) + 10
+number2 = int(result2[result2.index(':') + 1:]) + 10
+number3 = int(result3[result3.index(':') + 1:]) + 10
 
-c = result2.index("5")
-d = int(result2[c:])
-
-e = result3.index("9")
-f = int(result3[e])
-print(a + 10)
-print(d + 10)
-print(f + 10)
+print(number1)
+print(number2)
+print(number3)
