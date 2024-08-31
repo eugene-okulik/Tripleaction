@@ -2,7 +2,8 @@ text = "Etiam tincidunt neque erat, quis molestie enim imperdiet vel. Integer ur
 words = text.split()
 
 for word in words:
-    if word[-1] == "," or word[-1] == ".":
+    if (word[-1] == ","
+            or word[-1] == "."):
         modified_word = word[:-1] + "ing" + word[-1]
     else:
         modified_word = word + "ing"
