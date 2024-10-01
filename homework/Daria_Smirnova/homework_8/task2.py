@@ -5,7 +5,6 @@ sys.set_int_max_str_digits(0)
 
 def progression(limit=1000):
     a, b = 0, 1
-    count = 1
     while True:
         yield a
         a, b = b, a + b
