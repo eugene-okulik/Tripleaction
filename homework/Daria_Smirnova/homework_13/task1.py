@@ -32,4 +32,3 @@ date_obj3 = datetime.strptime(third_date, "%Y-%m-%d %H:%M:%S.%f")
 now = datetime.now()
 other_date = now - date_obj3
 print(other_date.days)
-
