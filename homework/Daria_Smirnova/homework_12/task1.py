@@ -93,7 +93,7 @@ if __name__ == "__main__":
     print(bouquet)
 
     bouquet.sort_by_price()
-gir
+
     print(bouquet)
 
     value = 3
