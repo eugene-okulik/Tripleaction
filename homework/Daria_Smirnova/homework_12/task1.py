@@ -8,7 +8,7 @@ class Flower:
         self.length = length
 
     def __repr__(self):
-        return f"{self.name} {self.color} - {self.price} руб - {self.fresh} срок годности - {self.length} длина стебля"
+        return f"{self.name} {self.color} - {self.price} руб - {self.fresh} год - {self.length}дл"
 
 
 class Rose(Flower):
