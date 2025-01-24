@@ -30,5 +30,6 @@ print(calendar.day_name[date_obj2.weekday()])
 third_date = list_of_dates[-1]
 date_obj3 = datetime.strptime(third_date, "%Y-%m-%d %H:%M:%S.%f")
 now = datetime.now()
-a = now - date_obj3
-print(a.days)
+other_date = now - date_obj3
+print(other_date.days)
+
