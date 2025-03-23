@@ -1,6 +1,5 @@
-
-NSERT INTO groups  (title, start_date, end_date) VALUES ('Bugs', 'march 2025', 'jan 2026')
 INSERT INTO students (name, second_name, group_id) VALUES ('Daria', 'Smirnova', 3151)
+INSERT INTO groups  (title, start_date, end_date) VALUES ('Bugs', 'march 2025', 'jan 2026')
 INSERT INTO books (title, taken_by_student_id) VALUES ('Bad habits', 4877)
 INSERT INTO books (title, taken_by_student_id) VALUES ('3 cats', 4877)
 INSERT INTO books (title, taken_by_student_id) VALUES ('The closed door', 4877)
