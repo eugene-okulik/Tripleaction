@@ -92,7 +92,7 @@ for i in cursor.fetchall():
     print(f"Tittle of books for this student {i['title']}")
 
 query = '''
-SELECT DISTINCT 
+SELECT DISTINCT
     marks.value,
     books.title AS book_title,
     lessons.title AS lesson_title,
@@ -109,7 +109,6 @@ ORDER BY books.title, lessons.title, subjets.title
 
 cursor.execute(query, (student_id,))
 print(cursor.fetchall())
-
 db.commit()
 cursor.close()
 db.close()
