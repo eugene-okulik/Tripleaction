@@ -92,11 +92,11 @@ for i in cursor.fetchall():
     print(f"Tittle of books for this student {i['title']}")
 
 query = '''
-SELECT DISTINCT  
-    marks.value, 
-    books.title AS book_title, 
-    lessons.title AS lesson_title, 
-    subjets.title AS subject_title, 
+SELECT DISTINCT 
+    marks.value,
+    books.title AS book_title,
+    lessons.title AS lesson_title,
+    subjets.title AS subject_title,
     students.group_id
 FROM marks
 JOIN books ON marks.student_id = books.taken_by_student_id
