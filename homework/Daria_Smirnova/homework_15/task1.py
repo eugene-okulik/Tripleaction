@@ -31,9 +31,9 @@ values3 = [('Pedro Paramo', student_id),
            ('Shadow of wind', student_id)]
 cursor.executemany(query3, values3)
 
-query4 = 'INSERT INTO subjets (title) VALUES (%s)'
+queryt = 'INSERT INTO subjets (title) VALUES (%s)'
 value4 = 'english',
-cursor.execute(query4, value4)
+cursor.execute(queryt, value4)
 subject1 = cursor.lastrowid
 print(subject1)
 
