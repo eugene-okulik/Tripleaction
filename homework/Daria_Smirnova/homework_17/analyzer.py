@@ -1,6 +1,6 @@
 import os
 import argparse
-
+#parsing
 
 def find_five_words(line, find_text, diapozon=5):
     words = line.strip().split()
