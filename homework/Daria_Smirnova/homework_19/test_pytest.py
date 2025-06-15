@@ -42,7 +42,6 @@ def test_get_one_object(new_object):
     response = requests.get(f'http://167.172.172.115:52353/object/{new_object}')
     data = response.json()
     assert data['id'] == new_object
-    print(data)
 
 
 @pytest.mark.parametrize("color", ["rojo", "amarillo", "negro"])
