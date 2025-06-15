@@ -114,5 +114,6 @@ def test_patch_object(new_object):
 
 def test_delete_object(new_object):
     response = requests.delete(f'http://167.172.172.115:52353/object/{new_object}')
-    print(response.text)
-    print(response.status_code)
+    assert response.status_code == 200, 'Status code is incorrect'
+    get_response = requests.get(f'http://167.172.172.115:52353/object/{new_object}')
+    assert get_response.status_code == 404, f'Object still exists after deletion'
