@@ -1,7 +1,8 @@
 import requests
 import allure
 
-class UpdatePost():
+
+class UpdatePost:
     url = "http://167.172.172.115:52353/object"
     headers = {'Content-Type': 'application/json'}
 

@@ -16,7 +16,6 @@ def test_post_one_object(create_post_endpoint, data):
 
 
 def test_read_object(read_created_post_endpoint, post_id):
-    response = read_created_post_endpoint.read_new_object(post_id)
     read_created_post_endpoint.check_id_is_correct(post_id)
 
 
