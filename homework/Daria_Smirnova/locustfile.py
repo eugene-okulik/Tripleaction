@@ -39,11 +39,11 @@ class PostUser(HttpUser):
             "name": "Magnifico",
             "data": {"color": "blanco", "size": "changed"}
         }
-        self.client.put(f"/object/1917", json=data)
+        self.client.put("/object/1917", json=data)
 
     @task(2)
     def patch_one_object(self):
         data = {
             "name": "Incredible object"
         }
-        self.client.patch(f"/object/1917", json=data)
+        self.client.patch("/object/1917", json=data)

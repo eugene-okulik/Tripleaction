@@ -42,4 +42,4 @@ def post_id(create_post_endpoint):
         raise ValueError(f"Cannot get object ID from response: {response_data}")
 
     yield object_id
-#test
+# test
