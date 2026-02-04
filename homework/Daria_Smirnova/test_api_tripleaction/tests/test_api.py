@@ -7,44 +7,45 @@ TEST_DATA = [
 
 
 @pytest.mark.parametrize("data", TEST_DATA)
-def test_post_one_object(create_post_endpoint, data):
-    response = create_post_endpoint.create_new_object(body=data)
-    create_post_endpoint.check_status_code_is_correct(response.status_code)
-    create_post_endpoint.check_color_is_correct(data["data"]["color"])
-    create_post_endpoint.check_size_is_correct(data["data"]["size"])
-    create_post_endpoint.check_name_correct(data["name"])
+def test_create_one_object(create_object_endpoint, data):
+    response = create_object_endpoint.create_new_object(body=data)
+    create_object_endpoint.check_status_code_is_correct()
+    create_object_endpoint.check_color_is_correct(data["data"]["color"])
+    create_object_endpoint.check_size_is_correct(data["data"]["size"])
+    create_object_endpoint.check_name_correct(data["name"])
 
 
-def test_read_object(read_created_post_endpoint, post_id):
-    read_created_post_endpoint.check_id_is_correct(post_id)
+def test_read_object(read_created_object_endpoint, post_id):
+    response = read_created_object_endpoint.read_new_object(post_id)
+    read_created_object_endpoint.check_status_code_is_correct()
 
 
-def test_put_object(update_post_endpoint, post_id):
+def test_put_object(update_object_endpoint, post_id):
     body = {
         "data": {"color": "amarillo", "size": "medium"},
         "name": "Updated object"
     }
 
-    response = update_post_endpoint.update_object(object_id=post_id, body=body)
-    update_post_endpoint.check_status_code_is_correct(response.status_code)
-    update_post_endpoint.check_color_is_correct(body["data"]["color"])
-    update_post_endpoint.check_size_is_correct(body["data"]["size"])
-    update_post_endpoint.check_name_correct(body["name"])
+    response = update_object_endpoint.update_object(object_id=post_id, body=body)
+    update_object_endpoint.check_status_code_is_correct()
+    update_object_endpoint.check_color_is_correct(body["data"]["color"])
+    update_object_endpoint.check_size_is_correct(body["data"]["size"])
+    update_object_endpoint.check_name_correct(body["name"])
 
 
-def test_patch_object(renew_post_endpoint, post_id):
+def test_patch_object(renew_object_endpoint, post_id):
     body = {
         "data": {
             "size": "muy pequeno"
         },
         "name": "Renewed_name object"
     }
-    response = renew_post_endpoint.renew_object(object_id=post_id, body=body)
-    renew_post_endpoint.check_status_code_is_correct(response.status_code)
-    renew_post_endpoint.check_size_is_correct(body["data"]["size"])
-    renew_post_endpoint.check_name_correct(body["name"])
+    response = renew_object_endpoint.renew_object(object_id=post_id, body=body)
+    renew_object_endpoint.check_status_code_is_correct()
+    renew_object_endpoint.check_size_is_correct(body["data"]["size"])
+    renew_object_endpoint.check_name_correct(body["name"])
 
 
-def test_delete_object(delete_post_endpoint, post_id):
-    response = delete_post_endpoint.delete_object(object_id=post_id)
-    delete_post_endpoint.check_status_code_is_correct(response.status_code)
+def test_delete_object(delete_object_endpoint, post_id):
+    response = delete_object_endpoint.delete_object(object_id=post_id)
+    delete_object_endpoint.check_status_code_is_correct()
