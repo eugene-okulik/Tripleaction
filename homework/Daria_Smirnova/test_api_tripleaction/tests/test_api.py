@@ -8,7 +8,7 @@ TEST_DATA = [
 
 @pytest.mark.parametrize("data", TEST_DATA)
 def test_create_one_object(create_object_endpoint, data):
-    response = create_object_endpoint.create_new_object(body=data)
+    create_object_endpoint.create_new_object(body=data)
     create_object_endpoint.check_status_code_is_correct()
     create_object_endpoint.check_color_is_correct(data["data"]["color"])
     create_object_endpoint.check_size_is_correct(data["data"]["size"])
@@ -16,7 +16,7 @@ def test_create_one_object(create_object_endpoint, data):
 
 
 def test_read_object(read_created_object_endpoint, post_id):
-    response = read_created_object_endpoint.read_new_object(post_id)
+    read_created_object_endpoint.read_new_object(post_id)
     read_created_object_endpoint.check_status_code_is_correct()
 
 
@@ -26,7 +26,7 @@ def test_put_object(update_object_endpoint, post_id):
         "name": "Updated object"
     }
 
-    response = update_object_endpoint.update_object(object_id=post_id, body=body)
+    update_object_endpoint.update_object(object_id=post_id, body=body)
     update_object_endpoint.check_status_code_is_correct()
     update_object_endpoint.check_color_is_correct(body["data"]["color"])
     update_object_endpoint.check_size_is_correct(body["data"]["size"])
@@ -40,12 +40,12 @@ def test_patch_object(renew_object_endpoint, post_id):
         },
         "name": "Renewed_name object"
     }
-    response = renew_object_endpoint.renew_object(object_id=post_id, body=body)
+    renew_object_endpoint.renew_object(object_id=post_id, body=body)
     renew_object_endpoint.check_status_code_is_correct()
     renew_object_endpoint.check_size_is_correct(body["data"]["size"])
     renew_object_endpoint.check_name_correct(body["name"])
 
 
 def test_delete_object(delete_object_endpoint, post_id):
-    response = delete_object_endpoint.delete_object(object_id=post_id)
+    delete_object_endpoint.delete_object(object_id=post_id)
     delete_object_endpoint.check_status_code_is_correct()

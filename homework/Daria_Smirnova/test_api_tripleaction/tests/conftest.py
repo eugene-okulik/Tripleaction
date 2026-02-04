@@ -1,14 +1,16 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-
 import pytest
-from endpoints.create_object import CreateObject
-from endpoints.update_object import UpdateObject
-from endpoints.renew_object import RenewObject
-from endpoints.delete_object import DeleteObject
-from endpoints.read_created_object import ReadObject
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
+from test_api_tripleaction.endpoints.create_object import CreateObject
+from test_api_tripleaction.endpoints.update_object import UpdateObject
+from test_api_tripleaction.endpoints.renew_object import RenewObject
+from test_api_tripleaction.endpoints.delete_object import DeleteObject
+from test_api_tripleaction.endpoints.read_created_object import ReadObject
 
 
 @pytest.fixture()
