@@ -50,4 +50,5 @@ def post_id(create_object_endpoint):
         raise ValueError(f"Cannot get object ID from response: {response_data}")
 
     yield object_id
+    create_object_endpoint.delete_object(object_id)
 # test
