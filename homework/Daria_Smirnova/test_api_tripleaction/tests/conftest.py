@@ -40,7 +40,7 @@ def delete_object_endpoint():
 
 
 @pytest.fixture()
-def post_id(create_object_endpoint):
+def post_id(create_object_endpoint, delete_object_endpoint):
     body = {"data": {"color": "verde", "size": "grande"}, "name": "Temp object"}
     response = create_object_endpoint.create_new_object(body)
     response_data = response.json()
@@ -50,5 +50,5 @@ def post_id(create_object_endpoint):
         raise ValueError(f"Cannot get object ID from response: {response_data}")
 
     yield object_id
-    create_object_endpoint.delete_object(object_id)
+    delete_object_endpoint.delete_object(object_id)
 # test

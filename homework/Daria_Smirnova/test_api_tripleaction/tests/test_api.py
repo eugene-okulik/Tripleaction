@@ -46,6 +46,7 @@ def test_patch_object(renew_object_endpoint, post_id):
     renew_object_endpoint.check_name_correct(body["name"])
 
 
-def test_delete_object(delete_object_endpoint, post_id):
+def test_delete_object(delete_object_endpoint, read_created_object_endpoint, post_id):
     delete_object_endpoint.delete_object(object_id=post_id)
     delete_object_endpoint.check_status_code_is_200()
+    read_created_object_endpoint.check_object_not_exist(post_id)

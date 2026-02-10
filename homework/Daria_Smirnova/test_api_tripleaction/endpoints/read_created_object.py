@@ -11,3 +11,9 @@ class ReadObject(BaseEndpoint):
         self.response = requests.get(f"{self.url}/{object_id}")
         self.json = self.response.json()
         return self.response
+
+    @allure.step("Check that object is not exist anymore")
+    def check_object_not_exist(self, object_id):
+        get_response = requests.get(f"{self.url}/{object_id}")
+        assert get_response.status_code == 404, \
+            'Object still exists after deletion'

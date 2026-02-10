@@ -1,5 +1,4 @@
 import allure
-import requests
 
 
 class BaseEndpoint:
@@ -27,10 +26,3 @@ class BaseEndpoint:
     @allure.step("Check response name is correct")
     def check_name_correct(self, expected_name):
         assert self.json["name"] == expected_name, "Name is not correct"
-
-    @allure.step("Delete object")
-    def delete_object(self, object_id, headers=None):
-        headers = headers or self.headers
-        delete_url = f"{self.url}/{object_id}"
-        self.response = requests.delete(delete_url, headers=headers)
-        return self.response
