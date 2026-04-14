@@ -23,7 +23,7 @@ def test_language(driver):
     final = driver.find_element(By.ID, "submit-id-submit")
     final.click()
 
-    new_page = wait.until(EC.presence_of_element_located((By.ID, "result")))
+    wait.until(EC.presence_of_element_located((By.ID, "result")))
     entered_text = driver.find_element(By.XPATH, "//*[contains(text(), 'Python')]")
     assert "Python" in entered_text.text
 
