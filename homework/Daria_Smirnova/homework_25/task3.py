@@ -38,3 +38,4 @@ def test_task2(driver):
         EC.visibility_of_element_located((By.XPATH, "//div[@id='finish']//h4"))
     )
     assert hello.text == "Hello World!"
+#flake8
