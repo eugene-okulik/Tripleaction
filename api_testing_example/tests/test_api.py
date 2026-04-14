@@ -16,7 +16,6 @@ def test_create_token(create_token_endpoint, name):
     create_token_endpoint.check_status_code_is_200()
 
 
-
 @pytest.mark.parametrize("data", TEST_DATA)
 def test_create_one_meme(create_meme_endpoint, data):
     create_meme_endpoint.create_new_meme(body=data)
