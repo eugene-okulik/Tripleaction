@@ -17,9 +17,9 @@ def driver():
 
 def test_language(driver):
     wait = WebDriverWait(driver, 10)
-    driver.get('https://www.qa-practice.com/elements/select/single_select')
+    driver.get("https://www.qa-practice.com/elements/select/single_select")
     language_select = Select(driver.find_element(By.ID, "id_choose_language"))
-    language_select.select_by_value('1')
+    language_select.select_by_value("1")
     final = driver.find_element(By.ID, "submit-id-submit")
     final.click()
 
@@ -34,5 +34,7 @@ def test_task2(driver):
     begin_button = driver.find_element(By.CSS_SELECTOR, "#start button")
     begin_button.click()
 
-    hello = wait.until(EC.visibility_of_element_located((By.XPATH, "//div[@id='finish']//h4")))
+    hello = wait.until(
+        EC.visibility_of_element_located((By.XPATH, "//div[@id='finish']//h4"))
+    )
     assert hello.text == "Hello World!"
